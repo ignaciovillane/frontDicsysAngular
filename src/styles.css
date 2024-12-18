@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    /*FUENTES*/
+    font: 16px "Archivo", Arial, Helvetica, sans-serif;
+    -webkit-font-soomthing: antialiased;
+    -moz-font-soomthing: antialiased;
+    -moz-osx-font-soomthing: antialiased;
+    overflow-x: hidden;
+}

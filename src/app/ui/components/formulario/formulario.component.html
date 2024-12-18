@@ -1,0 +1,27 @@
+<form (ngSubmit)="crearProducto()">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="producto.nombre" name="nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" [(ngModel)]="producto.precio" name="precio" required>
+    </div>
+    <div class="form-group">
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" [(ngModel)]="producto.stock" name="stock" required>
+    </div>
+    <div class="form-group">
+        <label for="fechaVencimiento">Fecha de Vencimiento:</label>
+        <input type="date" id="fechaVencimiento" [(ngModel)]="producto.fecha_vencimiento" name="fecha_vencimiento" required>
+    </div>
+    <div class="form-group">
+        <label for="idCategoria">Categoría:</label>
+        <select id="idCategoria" [(ngModel)]="producto.id_categoria" name="id_categoria" required>
+        <option *ngFor="let categoria of arrayCategorias" [value]="categoria.id">{{ categoria.nombre }}</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="loading">Crear Producto</button>
+    <div *ngIf="loading" class="loading">Creando producto...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+</form>
